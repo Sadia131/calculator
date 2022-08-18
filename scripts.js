@@ -1,10 +1,28 @@
+let string = "";
+let buttons = document.querySelectorAll('.button');
+Array.from(buttons).forEach((button)=> {
+    button.addEventListener('click', (e)=>{
+        if(e.target.innerHTML == '='){
+            string = eval(string);
+            document.querySelector('input').value = string;
+        }
 
-document.getElementById('display').addEventListener('click', function(){
-    const displayName = document.getElementById('display');
-    const displayCount = parseFloat(displayName.value);
-    console.log(displayCount)
+        else if(e.target.innerHTML == 'C'){
+            string = "";
+            document.querySelector('input').value = string;
+        }
 
+        else if(e.target.innerHTML == 'D'){
+            string =substr(input.value.length) - 1;
+            document.querySelector('input').value = string;
+        }
+
+        else{
+        console.log(e.target)
+        string = string+ e.target.innerHTML;
+        document.querySelector('input').value = string;
+        }
+    })
 })
 
 
-let buttons = document.getElementsByClassName('button');
